@@ -1,0 +1,148 @@
+{
+  "format": "linden-scene",
+  "version": 2,
+  "name": "Main",
+  "settings": {
+    "ambientColor": "#4a5568",
+    "skybox": "default"
+  },
+  "entities": [
+    {
+      "id": "ent-fps-player",
+      "name": "FPS Player",
+      "active": true,
+      "static": false,
+      "tags": [
+        "Player"
+      ],
+      "layer": 6,
+      "parentId": null,
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.8,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "CharacterController",
+          "data": {
+            "stepOffset": 0.3,
+            "slopeLimit": 45
+          }
+        },
+        {
+          "type": "Camera",
+          "data": {
+            "fov": 75,
+            "near": 0.1,
+            "far": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "ent-arena-floor",
+      "name": "Arena Floor",
+      "active": true,
+      "static": true,
+      "tags": [
+        "Ground"
+      ],
+      "layer": 0,
+      "parentId": null,
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              30,
+              0.2,
+              30
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "plane",
+            "color": "#2d3748"
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 30,
+              "y": 0.2,
+              "z": 30
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ent-sun-light",
+      "name": "Sun Light",
+      "active": true,
+      "static": true,
+      "tags": [],
+      "layer": 0,
+      "parentId": null,
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              20,
+              0
+            ],
+            "rotation": [
+              45,
+              -30,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "directional",
+            "color": "#fffaf0",
+            "intensity": 1.2
+          }
+        }
+      ]
+    }
+  ]
+}
